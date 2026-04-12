@@ -17,8 +17,8 @@ import { call } from '@/utils/apiWrapper'
 
 // Component state
 const footerText = ref('Powered by')
-const linkText = ref('BrainWise')
-const footerLink = ref('https://nexus.brainwise.me')
+const linkText = ref('DanERP')
+const footerLink = ref('https://danerp.tech')
 const footerRoot = ref(null)
 const config = ref({})
 const serverValidationEnabled = ref(true)
@@ -81,11 +81,11 @@ const loadBrandingConfig = async () => {
 			}
 		}
 	} catch (error) {
-		console.error('[BrainWise] Failed to load branding config:', error)
+		console.error('[DanERP] Failed to load branding config:', error)
 		// Use fallback values
 		footerText.value = 'Powered by'
-		linkText.value = 'BrainWise'
-		footerLink.value = 'https://nexus.brainwise.me'
+		linkText.value = 'DanERP'
+		footerLink.value = 'https://danerp.tech'
 	}
 }
 
@@ -123,15 +123,15 @@ const logClientEvent = async (eventType, details = {}) => {
 			})
 		})
 	} catch (error) {
-		console.error('[BrainWise] Failed to log event:', error)
+		console.error('[DanERP] Failed to log event:', error)
 	}
 }
 
 const ensureBranding = () => {
 	if (!footerRoot.value) return
 
-	const expectedBrand = atob(config.value._l || btoa('BrainWise'))
-	const expectedUrl = atob(config.value._u || btoa('https://nexus.brainwise.me'))
+	const expectedBrand = atob(config.value._l || btoa('DanERP'))
+	const expectedUrl = atob(config.value._u || btoa('https://danerp.tech'))
 	const expectedText = atob(config.value._t || btoa('Powered by'))
 
 	// Check if values have been tampered

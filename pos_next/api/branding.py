@@ -53,7 +53,7 @@ def get_branding_config():
 
 		return config
 	except Exception as e:
-		frappe.log_error(f"Error fetching branding config: {str(e)}", "BrainWise Branding API")
+		frappe.log_error(f"Error fetching branding config: {str(e)}", "DanERP Branding API")
 		return get_default_config()
 
 
@@ -61,8 +61,8 @@ def get_default_config():
 	"""Return default branding configuration"""
 	return {
 		"_t": base64.b64encode("Powered by".encode()).decode(),
-		"_l": base64.b64encode("BrainWise".encode()).decode(),
-		"_u": base64.b64encode("https://nexus.brainwise.me".encode()).decode(),
+		"_l": base64.b64encode("DanERP".encode()).decode(),
+		"_u": base64.b64encode("https://danerp.tech".encode()).decode(),
 		"_i": 10000,
 		"_v": True,
 		"_c": "pos-footer-component",
