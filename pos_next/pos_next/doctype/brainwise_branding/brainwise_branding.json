@@ -74,7 +74,7 @@
    "read_only": 1
   },
   {
-   "default": "BrainWise",
+   "default": "DanERP",
    "fieldname": "brand_name",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -83,7 +83,7 @@
    "read_only": 1
   },
   {
-   "default": "https://nexus.brainwise.me",
+   "default": "https://danerp.tech",
    "fieldname": "brand_url",
    "fieldtype": "Data",
    "label": "Brand URL",

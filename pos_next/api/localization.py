@@ -5,6 +5,22 @@
 import frappe
 
 
+@frappe.whitelist(allow_guest=True)
+def get_app_translations(locale=None):
+	"""Return translation messages for POS frontend.
+
+	This is a compatibility endpoint for frontends that previously called
+	`frappe.translate.get_app_translations` on older framework versions.
+	"""
+	from frappe.translate import get_all_translations, get_language
+
+	lang = (locale or frappe.form_dict.get("locale") or "").strip().lower()
+	if not lang:
+		lang = (frappe.local.lang or "").strip().lower() or get_language() or "en"
+
+	return get_all_translations(lang)
+
+
 @frappe.whitelist()
 def get_user_language():
 	"""
